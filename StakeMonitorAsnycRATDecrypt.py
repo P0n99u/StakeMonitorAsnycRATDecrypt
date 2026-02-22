@@ -55,6 +55,21 @@ def decrypt_data(input_b64, master_key_b64, salt_bytes, iterations):
         return plaintext.decode('utf-8')
     except Exception as e:
         return f"복호화 성공(Binary 데이터): {padded_plaintext.hex()}"
+        
+master_key_encoded = "MASTER_KEY"
+salt = bytes(["salt_KEY"])
+{
+  "Ports": "YOUR_ENCRYPTED_PORTS_DATA",
+  "Hosts": "YOUR_ENCRYPTED_HOSTS_DATA",
+  "Version": "YOUR_VERSION_DATA",
+  "Install": "...",
+  "MTX": "...",
+  "Anti": "...",
+  "Pastebin": "...",
+  "BDOS": "...",
+  "Group": "..."
+}
+iterations = 50000
 
 for i,j in dic.items():
     result = decrypt_data(j, master_key_encoded, salt, iterations)
