@@ -1,15 +1,10 @@
 import hashlib
 import hmac
 import base64
-import os
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.primitives import padding, hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 from cryptography.hazmat.backends import default_backend
-from dotenv import load_dotenv
-
-# Load environment variables from .env file
-load_dotenv()
 
 def decrypt_data(input_b64, master_key_b64, salt_bytes, iterations):
     try:
